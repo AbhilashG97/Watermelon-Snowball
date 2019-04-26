@@ -16,7 +16,7 @@ The **goal** is to process natural language in order to perform tasks that are u
 
 The whole NLP process can be divided into variuos levels which is shown below - 
 
-![nlp-levels](#nlp-levels)
+![nlp-levels](https://github.com/AbhilashG97/Watermelon-Snowball/blob/master/Deep%20NLP%20-%20Stanford%20University/Day%201/images/nlp-levels.png)
 
 ### What's special about human language?
 
