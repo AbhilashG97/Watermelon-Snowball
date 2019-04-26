@@ -1,6 +1,6 @@
 # DAY ONE -  Natural Language Processing with Deep Learning
 
-## Intorduction 
+## Introduction 
 
 **What is Natural Language Processing (NLP)?**
 
@@ -30,11 +30,11 @@ Unlike, other forms of data, human language is very well constructed and usually
 
 ### What's Deep Learning?
 
-Machine learning in general can be summed up somewhat like this in general - 
+Machine learning in general can be summed up to somewhat like this in general - 
 
 ```ML in practice = Describing your data with features a computer can understand + Learning Algorithm```
 
-```Deep Learning``` algorithms attempt to learn (multiple levels of) representation and an output
+```Deep Learning``` algorithms attempt to learn (multiple levels of) representation and an output.
 
 ```Representation learning``` attempts to automatically learn good features or representations from raw inputs like sound, characters or words.
 
@@ -56,13 +56,13 @@ There are many other reasons as well.
 
 ### Deep NLP 
 
-Combine ideas and goals of NLP with using representation learning and deep learning methods to solve them.
+Combine ideas and goals of NLP with representation learning and deep learning methods to solve them.
 
 **```Morpheme```** - a meaningful morphological unit of a language that cannot be further divided.
 
 ```Deep Learning method -```
 
-1. Every word and every phrase and every logical expression is a vector.
+1. Every word, every phrase and every logical expression is a vector.
 
 1. A neural network combines two vectors into one vector.
 
@@ -70,9 +70,9 @@ Combine ideas and goals of NLP with using representation learning and deep learn
 
 ### Dialog Agents / Response Generation 
 
-An application of the powerful, general technique of ```Natural Language Model```, which are an instance of ```Recurrent Neural Network```.
+An application of the powerful, general technique of ```Natural Language Model```, which is an instance of ```Recurrent Neural Network```.
 
-Google's Inbox replies uses RNN to read the mail, it then suggests replies depending on the context of the mail.
+Google's Inbox replies uses ```RNN``` to read the mail, it then suggests replies depending on the context of the mail.
 
 ### Neural Machine Translation 
 
