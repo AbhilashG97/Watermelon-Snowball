@@ -1,4 +1,6 @@
-# DAY ONE -  Natural Language Processing with Deep Learning
+# DAY ONE -  Introduction and Word Vectors
+
+:warning: Slides for the first lecture can be found [here](slides/#).
 
 ## Introduction 
 
@@ -85,3 +87,87 @@ Source sentence is mapped to a vector, then output senetence is generated.
 1. https://arxiv.org/abs/1604.00788
 1. https://arxiv.org/abs/1409.0473
 1. https://arxiv.org/abs/1409.3215
+
+## How do we represent the meaning of a word?
+
+Word Vectors are primarily used to represent the meaning of a word.
+
+## How do we have usable meaning in a computer? 
+
+A common taxonomy like ```WordNet``` that has hypernymes (is-a) relationships and sysnonym sets.
+
+### Hypernym vs Hyponym
+
+> In simpler terms, a hyponym is in a type-of relationship with its hypernym. For example, pigeon, crow, eagle and seagull are all hyponyms of bird (their hypernym); which, in turn, is a hyponym of animal.
+
+[!hypernym-vs-hyponym](#image)
+
+## Problems with descrete representation 
+
+There are a few problems with ```WordNet``` which are mentioned below - 
+
+1.  Great as a resource but missing nuances.
+
+    For instance, synonymes for good can be adept, expert, good, practiced, proficient, skillful etc, but all of these words denote a varying level of meaning. 
+
+    For instance, when someone says that they are *good at something* and when they say they are *expert at something*; both of these sentences have a subtle difference albeit the words good and expert are synonymes.
+
+1.  Missig new words. 
+
+    WordNet is not able to keep track of all the new words being introduced to a language. 
+
+1.  Requires human labour to create and adapt. 
+
+### One-Hot representation
+
+It is a ```localist``` represenatation. It consists of a vector space of ```zeros``` and ```ones```. The vector space is marked with ```one```, if the word matches a word present in word vector.  
+
+One-Hot encoding is used to perform ```binarization```. It converts a ```feature set``` to a ```binary feature set```.
+
+:boom: It is a symbolic representation. 
+
+#### Why are One-Hot representations bad?
+
+```One-Hot```representation cannot be used to find the similarity between words. It doesn't give us the measure as to how similar a word is to another word. 
+
+:warning: There is no natural notion of similarity in a set of one-hot vectors.
+
+:exclamation: Let us consider an example where we have two sentences which contains the word ```hotel``` and ```motel```. If we represent the one-hot encoding of the two words by ```x``` and ```y```, and then evaulate ```x transpose . y``` the result will turn out to be zero.
+
+## Distributional similarity based representations
+
+Here, a word is given a weight depending upon the neighbouring words (also known as context words).
+
+> Effectively, Word2Vec/Doc2Vec is based on distributional hypothesis where the context for each word is its nearby words. Similarly, LSA takes the entire document as the context. Both techniques solve the word embedding problem - embed words into a continuous vector space while keeping semantically related words close together.
+
+> On the other hand, LDA isn't made to solve the same problem. They deal with a different problem called topic modelling, which is finding latent topics in a set of documents.
+
+:warning: Please read this StackOverflow post on the difference between ```distributed representation``` and ```distributional representation```. 
+
+### Word Vectors
+
+> “You shall know a word by the company it keeps” (J. R. Firth 1957: 11)
+
+:warning: ```word vectors``` are sometimes called ```word embeddings``` or ```word representations```. They are distributed representation.
+
+Word vectors have the following - 
+
+1. ```Context words``` 
+   
+   Context words are a set of words that appear next to a given word. 
+
+2. ```Center words```
+   
+   Center words are the words from which the context words are formed. Context words appear next to center words.
+
+## Word2vec: Overview
+
+> It is a framework for learning word vectors. 
+
+The alogorithm for Word2vec is as follows - 
+
+1. We have a large corpus of text
+2. Every word in a fixed vocabulary is represented by a vector
+3. Go through each position ```t``` in the text, which has a center word and context (“outside”) words o
+4. Use the similarity of the word vectors for c and o to calculate the probability of o given c (or vice versa)
+5. Keep adjusting the word vectors to maximize this probability
