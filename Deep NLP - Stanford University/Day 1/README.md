@@ -164,6 +164,8 @@ Word vectors have the following -
 
 > It is a framework for learning word vectors. 
 
+<p align="center"><img src ="images/word2vec.png"/></p>
+
 The alogorithm for Word2vec is as follows - 
 
 1. We have a large corpus of text
@@ -171,3 +173,6 @@ The alogorithm for Word2vec is as follows -
 3. Go through each position ```t``` in the text, which has a center word and context (“outside”) words o
 4. Use the similarity of the word vectors for c and o to calculate the probability of o given c (or vice versa)
 5. Keep adjusting the word vectors to maximize this probability
+
+## Word2vec Objective Function
+
