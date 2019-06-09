@@ -1,6 +1,8 @@
 # DAY ONE -  Introduction and Word Vectors
 
-:warning: Slides for the first lecture can be found [here](slides/#).
+:warning: Slides for the first lecture can be found [here](slides/day-1.pdf).
+
+:warning: PDF notes of the lecture can be found [here](other%20stuff/notes01-wordvecs1.pdf).
 
 ## Introduction 
 
@@ -70,6 +72,8 @@ Combine ideas and goals of NLP with representation learning and deep learning me
 
 :warning: More on this later.
 
+:exclamation: To perfrom well on most NLP tasks, notions of similarity and difference between words is important. This notion of similarity and difference can be accomplished with the help of word vectors. 
+
 ### Dialog Agents / Response Generation 
 
 An application of the powerful, general technique of ```Natural Language Model```, which is an instance of ```Recurrent Neural Network```.
@@ -100,7 +104,7 @@ A common taxonomy like ```WordNet``` that has hypernymes (is-a) relationships an
 
 > In simpler terms, a hyponym is in a type-of relationship with its hypernym. For example, pigeon, crow, eagle and seagull are all hyponyms of bird (their hypernym); which, in turn, is a hyponym of animal.
 
-[!hypernym-vs-hyponym](#image)
+<p align="center"><img src ="images/hypernym%20vs%20hyponym.png"/></p>
 
 ## Problems with descrete representation 
 
@@ -112,7 +116,7 @@ There are a few problems with ```WordNet``` which are mentioned below -
 
     For instance, when someone says that they are *good at something* and when they say they are *expert at something*; both of these sentences have a subtle difference albeit the words good and expert are synonymes.
 
-1.  Missig new words. 
+1.  Missing new words. 
 
     WordNet is not able to keep track of all the new words being introduced to a language. 
 
@@ -125,6 +129,8 @@ It is a ```localist``` represenatation. It consists of a vector space of ```zero
 One-Hot encoding is used to perform ```binarization```. It converts a ```feature set``` to a ```binary feature set```.
 
 :boom: It is a symbolic representation. 
+
+:warning: **Denotational semantics** is the concept of representing an idea as a symbol (a word or a one-hot vector). It is sparse and cannot capture similarity. This is a **localist** representation.
 
 #### Why are One-Hot representations bad?
 
@@ -143,6 +149,28 @@ Here, a word is given a weight depending upon the neighbouring words (also known
 > On the other hand, LDA isn't made to solve the same problem. They deal with a different problem called topic modelling, which is finding latent topics in a set of documents.
 
 :warning: Please read this StackOverflow post on the difference between ```distributed representation``` and ```distributional representation```. 
+
+## Language Models
+
+> A good language model will give this sentence a high probability because this is a completely valid sentence, syntactically and semantically.
+
+We will have a look at ```Unigram``` and ```Bigram``` models. 
+
+1. **Unigram** 
+   
+   In Unigram model, the probability of each word in a word sequence is calculated by assuming that word occurrences are completely independent. 
+
+   <p align="center"><img src ="images/unigram.png"/></p>
+
+   :warning: This approach is flawed and will give good results for bad sentences too.
+
+2. **Bigram**
+
+   In Bigram model, the probability of each word is calcalated by assuming that it is dependent on the previous word. 
+
+   <p align="center"><img src ="images/bigram.png"/></p>
+
+   :warning: This is also not the best approach, but it gives good results.
 
 ### Word Vectors
 
@@ -174,5 +202,47 @@ The alogorithm for Word2vec is as follows -
 4. Use the similarity of the word vectors for c and o to calculate the probability of o given c (or vice versa)
 5. Keep adjusting the word vectors to maximize this probability
 
-## Word2vec Objective Function
+:warning: This method is also called **backpropogating the errors**. 
 
+### Word2vec contents
+
+It includes the following - 
+
+1. **2 Algorithms** - CBOW and skipgram. 
+
+2. **2 training methods** - **negative sampling** and **hierarchical softmax**.
+
+### Word2vec Objective Function
+
+ <p align="center"><img src ="images/objective-function.png"/></p>
+
+ Each word has two vectors - 
+
+ 1. Vector for a word, when it is a context word.
+ 2. Vector for a word, when it is a center word. 
+
+ <p align="center"><img src ="images/word-vector-forms.png"/></p>
+
+ Then, the probability would be - 
+
+  <p align="center"><img src ="images/softmax-objective-function.png"/></p>
+
+:warning: Two vector forms are easier to optimize. 
+
+Word2vec has two model variants, which are as follows - 
+
+1. **Skip-grams (SG)**
+
+   Here, we predict the context words given the center word.
+
+2. **Continous Bag of Words(CBOW)**
+
+   Here, we predict the center word given the context word. 
+
+## Calculating Gradients
+
+The gradient calculation for the skip-gram model can be found at the end of [this](https://www.youtube.com/watch?v=8rXD5-xhemo&list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z&index=1) lecture video [```56:00```]. 
+
+:warning: Gradient Descent will minimize the ```J```, but it will be expensive as ```J``` is a function of window (represented by m). 
+
+:boom: As Gradient Descent will be expensive, we will make use of Stochastic Gradient Descent(SGD) which will be give us the required result. SGD samples the window to give optimum results.
