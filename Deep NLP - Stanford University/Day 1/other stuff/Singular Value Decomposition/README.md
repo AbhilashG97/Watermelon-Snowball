@@ -1,8 +1,8 @@
 # Singular Value Decomposition 
 
-This section contains notes on ```Singular Value Decomposition``` commonly abbreviated as ```SVD```. 
+This section contains notes on ```Singular Value Decomposition```, commonly abbreviated as ```SVD```. 
 
-## Prereuisites
+## Prerequisites
 
 Before, we dive into SVD, let's have a look at a few things first.
 
@@ -32,13 +32,13 @@ This is a method for converting a set of vectors into a set of orthonormal vecto
 
 Given an orthonormal set of vectors ```u```<sub>```1```</sub>, ```u```<sub>```1```</sub>, ...., ```u```<sub>```k-1```</sub>, then ```w```<sub>```k```</sub>
 
-<p align="center"><img src ="images/gram-schmidt.png"/></p>
+<p align="center"><img src ="https://github.com/AbhilashG97/Watermelon-Snowball/blob/master/Deep%20NLP%20-%20Stanford%20University/Day%201/images/gram-schmidt.png"/></p>
 
 ### Orthogonal Matrices
 
 A matrix ```A``` is said to be orthogonal, if the following is true -
 
-<p align="center"><img src ="images/orthogonal-matrix.png"/></p>
+<p align="center"><img src ="https://github.com/AbhilashG97/Watermelon-Snowball/blob/master/Deep%20NLP%20-%20Stanford%20University/Day%201/images/orthogonal-matrix.png"/></p>
 
 ### Determinant 
 
@@ -48,7 +48,7 @@ A matrix ```A``` is said to be orthogonal, if the following is true -
 
 An eigenvector is a nonzero vector that satisfies the equation below - 
 
-<p align="center"><img src ="images/eigen.png"/></p>
+<p align="center"><img src ="https://github.com/AbhilashG97/Watermelon-Snowball/blob/master/Deep%20NLP%20-%20Stanford%20University/Day%201/images/eigen.png"/></p>
 
 where A is a square matrix, ```λ``` is a scalar, and ```v``` is the eigenvector. ```λ``` is called an eigenvalue. Eigenvalues and eigenvectors are also known as, respectively, characteristic roots and characteristic vectors, or latent roots and latent vectors.
 
@@ -56,7 +56,7 @@ where A is a square matrix, ```λ``` is a scalar, and ```v``` is the eigenvector
 
 It is primarily used for dimensionality reduction. It can be expressed by the following equation - 
 
-<p align="center"><img src ="images/svd.png"/></p>
+<p align="center"><img src ="https://github.com/AbhilashG97/Watermelon-Snowball/blob/master/Deep%20NLP%20-%20Stanford%20University/Day%201/images/svd.png"/></p>
 
 SVD is based on a theorem from linear algebra which says that a rectangular matrix A can be broken down into the product of three matrices - an orthogonal matrix ```U```, a diagonal matrix ```S```, and the transpose of an orthogonal matrix ```V```.
 
