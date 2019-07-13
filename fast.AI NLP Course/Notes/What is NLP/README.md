@@ -36,5 +36,25 @@ This section contains notes on some interesting blogs and articles
 
     This is a quite an interesting paper which talks about how the de-biasing methodoligies do not completely remove the gender bias from the word embeddings.  
 
-    
+    This paper mentions two de-biasing methods which were develeoped by - 
 
+    1.  Bolukbasi et al.
+    1.  Zhao et al.
+
+    The paper also mentions experiments which show how gender bias still prebails in the word embedding matrix even after debiasing it.
+
+    > This  clustering  of  gendered  wordsindicates that while we cannot directly “observe”the  bias  (i.e.    the  word  “nurse”  will  no  longerbe  closer  to  explicitly  marked  feminine  words)the  bias  is  still  manifested  by  the  word  beingclose   tosocially-markedfeminine   words,   forexample  “nurse”  being  close  to  “receptionist”,“caregiver”  and  “teacher”.  
+
+    > The crux of the issue is that the gender-directionprovides a way tomeasurethe gender-associationof a word,  butdoes not determineit.   Debiasingmethods which directly target the gender-directionare for the most part merely hiding the gender biasand not removing it. The popular definitions usedfor quantifying and removing bias are insufficient,and other aspects of the bias should be taken intoconsideration as well
+
+1.  **[How Will We Prevent AI-Based Forgery?](https://hbr.org/2019/03/how-will-we-prevent-ai-based-forgery)**   
+
+    This is a very interesting article that talks about how deep learning can cause serious issues. With the advancement in deep learning algorithms, it has become quite easy to produce fakes such as **deep fakes**. 
+
+    [This](https://grail.cs.washington.edu/projects/AudioToObama/siggraph17_obama.pdf) is also an interesting read. This paper is about creating Lip synced video from an audio file. The technology mentioned in this paper can be used to drastically improve video calls. 
+
+    [Here](https://www.vice.com/en_us/article/bjye8a/reddit-fake-porn-app-daisy-ridley) is another creepy article that shows what happens if deepfakes fall into the wrong hands.
+
+1.  **[Introduction to ME-ULMFiT](https://www.novetta.com/2019/03/introducing_me_ulmfit/)**
+
+    This is yet another intresting article that talks about an enhanced meta-data enhanced ULMFiT algorithm. 
